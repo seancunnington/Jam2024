@@ -27,9 +27,11 @@ public class StartMenuManager : MonoBehaviour
     
     
     [SerializeField] float imageEaseSpeed = 0.25f;
+    float fadeEaseTracker = 1f;
     float startMenuEaseTracker = 0f;
     float optionsMenuEaseTracker = 0f;
     float creditsEaseTracker = 0f;
+    bool showFade = false;
     bool showMenu = true;
     bool showOptions = false;
     bool showCredits = false;
@@ -44,14 +46,6 @@ public class StartMenuManager : MonoBehaviour
     
     // Options Panel
     
-    /*
-    // Credits Image
-    [SerializeField] Image credits;
-    [SerializeField] Vector2 creditsShowPos;
-    [SerializeField] bool updateCreditsShowPos = false;
-    [SerializeField] Vector2 creditsHidePos;
-    [SerializeField] bool updateCreditsHidePos = false;
-    */
     
 
 
@@ -71,9 +65,10 @@ public class StartMenuManager : MonoBehaviour
                     
                     // Hide Image Check
                     if (imageList[i].hideImage == true)                    
-                        imageList[i].image.enabled = false;
-                    else
-                        imageList[i].image.enabled = true;
+                    {
+                        imageList[i].image.rectTransform.anchoredPosition = imageList[i].hidePos;
+                        newData.hideImage = false;
+                    }
                                     
                     // Show Pos
                     if (imageList[i].updateShowPos == true)
@@ -116,6 +111,7 @@ public class StartMenuManager : MonoBehaviour
     
     private void OnEnable() 
     {
+        fadeEaseTracker = 1f;
         ShowMenu();
     }
     
@@ -124,13 +120,12 @@ public class StartMenuManager : MonoBehaviour
     void Update()
     {   
         StartMenuEasing();
-        //OptionsMenuEasing();
-        //CreditsEasing();
     }
     
     
     public void ShowMenu()
     {  
+        showFade = false;
         showMenu = true;
         showOptions = false;
         showCredits = false;              
@@ -138,6 +133,7 @@ public class StartMenuManager : MonoBehaviour
     
     public void ShowOptions()
     {
+        showFade = false;
         showMenu = false;
         showOptions = true;
         showCredits = false;
@@ -145,6 +141,7 @@ public class StartMenuManager : MonoBehaviour
     
     public void ShowCredits()
     {
+        showFade = false;
         showMenu = false;
         showOptions = false;
         showCredits = true;
@@ -152,6 +149,7 @@ public class StartMenuManager : MonoBehaviour
     
     public void FadeOut()
     {
+        showFade = true;
         showMenu = false;
         showOptions = false;
         showCredits = false;
@@ -160,57 +158,52 @@ public class StartMenuManager : MonoBehaviour
      
     void StartMenuEasing()
     {
+        
+        // Fade Image
+        float fadeTarget = showFade ? 1f : 0f;
+        fadeEaseTracker = Mathf.MoveTowards(fadeEaseTracker, fadeTarget, imageEaseSpeed * Time.deltaTime);
+        
         // Main Start Menu
         float startTarget = showMenu ? 1f : 0f;
         startMenuEaseTracker = Mathf.MoveTowards(startMenuEaseTracker, startTarget, imageEaseSpeed * Time.deltaTime);
         
         // Options Panel
         
+        
         // Credits
         float creditsTarget = showCredits ? 1f : 0f;   
         creditsEaseTracker = Mathf.MoveTowards(creditsEaseTracker, creditsTarget, imageEaseSpeed * Time.deltaTime);
-        
-        
-        //if (startMenuEaseTracker <= 0f || 1f <= startMenuEaseTracker) // if easing tracker is at either limit, don't do anything else.
-        //    return;
+    
            
         // Loop through all the UI Images and ease them between their Hiding Positions and Showing Positions
         float newX, newY;
         float t;
         for (int i = 0; i < imageList.Count; i++)
         {
+            // get the corresponding easing tracker
             if (imageList[i].menuType == MenuType.main) 
                 t = startMenuEaseTracker;
             else if (imageList[i].menuType == MenuType.options)
                 t = optionsMenuEaseTracker;
             else 
                 t = creditsEaseTracker;
-            
-            newX = ease_Image(imageList[i].hidePos.x, imageList[i].showPos.x, t);
-            newY = ease_Image(imageList[i].hidePos.y, imageList[i].showPos.y, t);
-            imageList[i].image.rectTransform.anchoredPosition = new Vector2(newX, newY);  
+                
+            if (0f < t && t < 1) // only do easing for this object if there will be any change
+            {
+                newX = ease_Image(imageList[i].hidePos.x, imageList[i].showPos.x, t);
+                newY = ease_Image(imageList[i].hidePos.y, imageList[i].showPos.y, t);
+                imageList[i].image.rectTransform.anchoredPosition = new Vector2(newX, newY);  
+            }
         }
                
-        // Fade out the fullScreen fade   
-        fadeOutColor[3] = ease_Fade(1f, 0f, startMenuEaseTracker);
-        fullscreenFade.color = fadeOutColor;
+        // Fade out the fullScreen fade but only if there will be any change.
+        if (0f < fadeEaseTracker && fadeEaseTracker < 1f)
+        {
+            fadeOutColor[3] = ease_Fade(0f, 1f, fadeEaseTracker);
+            fullscreenFade.color = fadeOutColor;
+        }
         
     }
     
-    /*
-    void CreditsEasing()
-    {
-        float target = showCredits ? 1f : 0f;
-        creditsEaseTracker = Mathf.MoveTowards(creditsEaseTracker, target, imageEaseSpeed * Time.deltaTime);
-        
-        if (creditsEaseTracker <= 0f || 1f <= creditsEaseTracker) // if easing tracker is at either limit, don't do anything else.
-            return;
-            
-        // Move the credits image between it's showing and hiding place
-        float newX = ease_Image(creditsHidePos.x, creditsShowPos.x, creditsEaseTracker);
-        float newY = ease_Image(creditsHidePos.y, creditsShowPos.y, creditsEaseTracker);
-        credits.rectTransform.anchoredPosition = new Vector2(newX, newY);
-    }
-    */
     
 }
