@@ -1,12 +1,16 @@
-using UnityEngine;
-using UnityEngine.UI;
+
 
 
 #if UNITY_EDITOR
+
+using UnityEngine;
+using UnityEngine.UI;
+
 /*
     This script resizes an attached UI Image component to the size of the attached sprite.
     - does nothing if either the UI Image component or sprite are missing.
 */
+
 
 [ExecuteInEditMode, RequireComponent(typeof(Image))]
 public class ConfigureImageSizeToSprite : MonoBehaviour

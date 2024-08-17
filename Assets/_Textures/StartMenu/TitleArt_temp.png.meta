@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1c858bd1a3057042af5476da6845df6
+guid: b7e48606e9c80e544a9099eb3b27e0e1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,12 +44,12 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -120,40 +120,61 @@ TextureImporter:
       name: TitleArt
       rect:
         serializedVersion: 2
-        x: 14
-        y: 505
-        width: 1013
-        height: 695
+        x: 0
+        y: 541
+        width: 1017
+        height: 659
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da7a18445cd35a341a4b8d6fbf2208f6
-      internalID: -21742878
+      spriteID: 845217b7944ce0a4da4c5bfaaef9fb7d
+      internalID: -552064854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start
+      name: StartButton
       rect:
         serializedVersion: 2
-        x: 1053
-        y: 887
+        x: 1045
+        y: 884
         width: 417
-        height: 172
+        height: 163
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57dc9476edc2ce048bb1787b49a32036
-      internalID: 1894078219
+      spriteID: dbea74839d4a80a45935caee9eb8df3b
+      internalID: 11529528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CreditsButton
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 711
+        width: 445
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f07c659e2067ae429eeeb28d902ce81
+      internalID: 1798764551
       vertices: []
       indices: 
       edges: []
@@ -162,19 +183,19 @@ TextureImporter:
       name: Credits
       rect:
         serializedVersion: 2
-        x: 1031
-        y: 714
-        width: 447
-        height: 130
+        x: 0
+        y: 0
+        width: 1462
+        height: 540
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec282f37560c7044a96239a59438e3d8
-      internalID: 433709248
+      spriteID: 3b73f2ca611bf6442ba9b42eb718ff1c
+      internalID: 652515912
       vertices: []
       indices: 
       edges: []
@@ -182,7 +203,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1219fffd5399ecf47b8426baca8481b7
+    spriteID: 9efff02906911f64685b2c53288058f1
     internalID: 0
     vertices: []
     indices: 
@@ -190,9 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Credits: 433709248
-      Start: 1894078219
-      TitleArt: -21742878
+      Credits: 652515912
+      CreditsButton: 1798764551
+      StartButton: 11529528
+      TitleArt: -552064854
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
