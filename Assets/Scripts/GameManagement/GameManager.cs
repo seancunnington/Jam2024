@@ -14,8 +14,9 @@ public class GameManager : MonoBehaviour
     // Scene Management Data
         public enum SceneList { 
         StartMenu,
-        PauseMenu,
-        GameOverScreen
+        //PauseMenu,
+        //GameOverScreen,
+        TestEnviro_JustBlocks
     }
     [HideInInspector]
     public SceneList sceneList;
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
     
     private void Start() 
     {
-        
+        /*
         // Load the start menu
         // Don't load the PauseMenu or GameOver scenes first - if passed, revert to StartMenu.
         if(     startingScene == SceneList.PauseMenu ||
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("Cannot start game with the '" + startingScene + "' scene. Loading 'StartMenu' instead.");
             startingScene = SceneList.StartMenu;            
         }
+        */
         StartCoroutine(LoadScene(startingScene));    
     }
     
