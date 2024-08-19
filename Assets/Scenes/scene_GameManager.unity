@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 716087531}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,8 +300,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _modelTransform: {fileID: 586574941}
-  maxSpeed: 5
+  maxSpeed: 8
   acceleration: 10
+  drag: 1
+  maxDashSpeed: 30
+  maxLevel: 100
+  expCap: 1000
+  curve_levelUp:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  stomachMeterUpdateSpeed: 2
+  maxScale: 50
+  curve_fishScaling:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scaleUpSpeed: 2
   sfx_Jump: {fileID: 8300000, guid: 4c212b0813c490c488d098bd66d0ffb2, type: 3}
 --- !u!54 &716087532
 Rigidbody:
@@ -430,8 +485,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focus: {fileID: 716087529}
-  heightAdjust: 0
+  heightAdjust: 4
+  invertX: 0
+  invertY: 0
   distance: 10
+  fishScale: 0
   focusRadius: 5
   focusCentering: 0.5
   rotationSpeed: 120
@@ -441,7 +499,7 @@ MonoBehaviour:
   alignSmoothRange: 45
   obstructionMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1
 --- !u!1 &1923431603
 GameObject:
   m_ObjectHideFlags: 0
