@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody _body;
     Vector3 velocity = Vector3.zero;
     
-    [SerializeField, Range(1f, 20f)] float maxSpeed = 5f;
+    [SerializeField, Range(0f, 20f)] float maxSpeed = 5f;
     [SerializeField, Range(1f, 20f)] float acceleration = 5f;
     
     // Dashing
@@ -53,10 +53,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AnimationCurve curve_fishScaling;
     [SerializeField] float scaleUpSpeed = 1f;
     
+    // Shader
+    MeshRenderer _renderer_Fish;
+    MaterialPropertyBlock props;
+    float animSpeed = 0f;
+    [Header("Shader Values")]
+    [SerializeField] float prop_ZOffset = 0.05f;
+    [SerializeField] float prop_Yaw = 40.0f;
+    [SerializeField] float prop_Roll = 40.0f;
+    [SerializeField] float prop_Scale = 0.02f;
+    
+    
     // SFX
     private AudioSource _audioSource;
     [Header("SFX")]
-    public AudioClip sfx_Jump = null;
+    public AudioClip sfx_Splash = null;
     
     
     private void CreateAudioSource()
@@ -66,7 +77,7 @@ public class PlayerController : MonoBehaviour
         _audioSource.playOnAwake = false;
         _audioSource.loop = false;
         
-        _audioSource.clip = sfx_Jump;
+        //_audioSource.clip = sfx_Jump;
     }
     
     
@@ -97,8 +108,13 @@ public class PlayerController : MonoBehaviour
         nextScale = 1f;
         scaleProgessTracker = 0f;
         
+        // Set up shader
+        _renderer_Fish = GetComponentInChildren<MeshRenderer>();
+        props = new MaterialPropertyBlock();
+        SendValuesToShader();
+        
         // Check that public values have been set
-        if (sfx_Jump == null) { print("PlayerController script missing: sfx_Jump"); }
+        //if (sfx_Jump == null) { print("PlayerController script missing: sfx_Jump"); }
         
         // SFX
         CreateAudioSource();
@@ -112,6 +128,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {       
+        
+       // if (Input.GetButtonDown("Fire1"))
+       // {
+       //     _audioSource.PlayOneShot(sfx_Splash);
+       // }
+        
+        
         // Rotate fish to face forward direction
         _modelTransform.rotation = Quaternion.LookRotation(velocity);
         
@@ -120,6 +143,9 @@ public class PlayerController : MonoBehaviour
         
         // Update the stomach amount and scale over time based on what's been eaten and current level
         UpdateStomachLevelScale();
+        
+        // Update shader with new time, so it has smooth increasing and decreasing animation via time
+        SendInstanceTimeToShader();
     }
     
     
@@ -189,6 +215,30 @@ public class PlayerController : MonoBehaviour
             driftingDirection = Vector3.zero;   // reset the drifting direction to zero, preparing for next drift
             activateDash = true;                // activate the dash
         }
+    }
+    
+    
+    //-----------------------------------------//
+    //               Shader Stuff              //
+    //-----------------------------------------//
+    
+    // Only sends this instance's time 
+    void SendInstanceTimeToShader()
+    {
+        animSpeed += Time.deltaTime * velocity.magnitude;
+        props.SetFloat("_Instance_Time", animSpeed);
+        _renderer_Fish.SetPropertyBlock(props);
+    }
+    
+    
+    // Sends ZOffset, Yaw, Roll and Scale
+    void SendValuesToShader()
+    {
+        props.SetFloat("_ZOffset", prop_ZOffset);
+        props.SetFloat("_Yaw", prop_Yaw);
+        props.SetFloat("_Roll", prop_Roll);
+        props.SetFloat("_Scale", prop_Scale);
+        _renderer_Fish.SetPropertyBlock(props);
     }
     
     
