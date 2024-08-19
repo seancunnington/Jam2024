@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Tropfish02 Base Color
-    second: {fileID: 2800000, guid: 67a31c6a4d7a51345afa55f53c1582f9, type: 3}
+    second: {fileID: 2800000, guid: 416aa5ea62b4bee4296aaf970a2b345f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
