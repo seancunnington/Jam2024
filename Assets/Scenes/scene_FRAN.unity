@@ -462,6 +462,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c6e7abcd884b2449fb547f348b86ade8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7cdd06c3772af4faa8d05f8a4ad006ae, type: 2}
     - target: {fileID: 919132149155446097, guid: c6e7abcd884b2449fb547f348b86ade8, type: 3}
       propertyPath: m_Name
       value: Rock_Tidepool_01
