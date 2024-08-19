@@ -12,6 +12,8 @@ public class OrbitCamera : MonoBehaviour {
 
     [SerializeField, Range(1f, 20f)]
     float distance = 5f;
+    
+    public float fishScale = 0f;
 
     [SerializeField, Min(0f)]
     float focusRadius = 5f;
@@ -89,7 +91,7 @@ public class OrbitCamera : MonoBehaviour {
         }
 
         Vector3 lookDirection = lookRotation * Vector3.forward;
-        Vector3 lookPosition = focusPoint - lookDirection * distance;
+        Vector3 lookPosition = focusPoint - lookDirection * (distance * fishScale);
 
         Vector3 rectOffset = lookDirection * regularCamera.nearClipPlane;
         Vector3 rectPosition = lookPosition + rectOffset;
@@ -111,7 +113,7 @@ public class OrbitCamera : MonoBehaviour {
 
     void UpdateFocusPoint () {
         previousFocusPoint = focusPoint;
-        Vector3 targetPoint = focus.position + (Vector3.up * heightAdjust);
+        Vector3 targetPoint = focus.position + (Vector3.up * heightAdjust * fishScale);
         if (focusRadius > 0f) {
             float distance = Vector3.Distance(targetPoint, focusPoint);
             float t = 1f;
