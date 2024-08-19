@@ -186,6 +186,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 80.087
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ebc0eafddb570433bac46fbf6a42d1a0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b64939d9a3eb4417802eca80b0241d8, type: 2}
     - target: {fileID: 919132149155446097, guid: ebc0eafddb570433bac46fbf6a42d1a0, type: 3}
       propertyPath: m_Name
       value: Barnacle_cluster_01 (1)
@@ -255,6 +259,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9d2c07ee8b9f8445bbd674d03612fb63, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f50b5746fca674c23a4d9f4ef76a14fe, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d2c07ee8b9f8445bbd674d03612fb63, type: 3}
       propertyPath: m_Name
       value: Rock_Tidepool_02
@@ -324,6 +332,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 86.195
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ebc0eafddb570433bac46fbf6a42d1a0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b64939d9a3eb4417802eca80b0241d8, type: 2}
     - target: {fileID: 919132149155446097, guid: ebc0eafddb570433bac46fbf6a42d1a0, type: 3}
       propertyPath: m_Name
       value: Barnacle_cluster_01 (2)
@@ -393,6 +405,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.218
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ebc0eafddb570433bac46fbf6a42d1a0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b64939d9a3eb4417802eca80b0241d8, type: 2}
     - target: {fileID: 919132149155446097, guid: ebc0eafddb570433bac46fbf6a42d1a0, type: 3}
       propertyPath: m_Name
       value: Barnacle_cluster_01
@@ -465,7 +481,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c6e7abcd884b2449fb547f348b86ade8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7cdd06c3772af4faa8d05f8a4ad006ae, type: 2}
+      objectReference: {fileID: 2100000, guid: 1656f4bc4649f4c328d5594ba5f27677, type: 2}
     - target: {fileID: 919132149155446097, guid: c6e7abcd884b2449fb547f348b86ade8, type: 3}
       propertyPath: m_Name
       value: Rock_Tidepool_01
@@ -535,6 +551,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b07f15828da194bc3b1e876cd8574601, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3a92dc6d533d4db29d2dea489fdbc63, type: 2}
     - target: {fileID: 919132149155446097, guid: b07f15828da194bc3b1e876cd8574601, type: 3}
       propertyPath: m_Name
       value: Rock_Tidepool_03
