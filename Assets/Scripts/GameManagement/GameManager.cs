@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
         StartMenu,
         //PauseMenu,
         //GameOverScreen,
-        TestEnviro_JustBlocks,
+        TestAssets,
+        TestAssetsLvl2,
         FRAN
     }
     [HideInInspector]

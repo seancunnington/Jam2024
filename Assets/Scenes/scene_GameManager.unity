@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17549637, g: 0.21958742, b: 0.30190948, a: 1}
+  m_IndirectSpecularColor: {r: 0.1754898, g: 0.21957858, b: 0.30189964, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -386,6 +386,7 @@ MonoBehaviour:
   prop_Yaw: 2
   prop_Roll: 2
   prop_Scale: 0.3
+  sfxVolume: 0.8
   clips_Dashing:
   - {fileID: 8300000, guid: 31d3204ebfb2e034a981d2f42540edd2, type: 3}
   - {fileID: 8300000, guid: 671576fb60d4d2146b050ed70f5c7af7, type: 3}
@@ -534,8 +535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   focus: {fileID: 716087529}
   heightAdjust: 3
-  invertX: 1
-  invertY: 1
+  invertX: 0
+  invertY: 0
   mouseSensitivity: 8.6
   distance: 10
   fishScale: 0

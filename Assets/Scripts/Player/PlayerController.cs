@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
     // SFX
     private AudioSource _audioSource;
     [Header("SFX")]
+    [Range(0.0f, 1.0f)] public float sfxVolume = 1f;
     [SerializeField] List<AudioClip> clips_Dashing;
     [SerializeField] List<AudioClip> clips_Chomp;
     [SerializeField] List<AudioClip> clips_Scream;
@@ -330,7 +331,7 @@ public class PlayerController : MonoBehaviour
     public void PlaySFX_SwimDash()
     {
         int i = Random.Range(0, clips_Dashing.Count);
-        float v = Random.Range(0.5f, 1f);
+        float v = Random.Range(0.5f, 1f) * sfxVolume;
     
         _audioSource.PlayOneShot(clips_Dashing[i], v);
     }
@@ -338,7 +339,7 @@ public class PlayerController : MonoBehaviour
     public void PlaySFX_Chomp()
     {
         int i = Random.Range(0, clips_Chomp.Count);
-        float v = Random.Range(0.6f, 1f);
+        float v = Random.Range(0.6f, 1f) * sfxVolume;
     
         _audioSource.PlayOneShot(clips_Chomp[i], v);
     }
@@ -346,7 +347,7 @@ public class PlayerController : MonoBehaviour
     public void PlaySFX_Scream()
     {
         int i = Random.Range(0, clips_Scream.Count);
-        float v = Random.Range(0.4f, 8f);
+        float v = Random.Range(0.4f, 0.8f) * sfxVolume;
     
         _audioSource.PlayOneShot(clips_Scream[i], v);
     }
@@ -354,7 +355,7 @@ public class PlayerController : MonoBehaviour
     public void PlaySFX_Bubbles()
     {
         int i = Random.Range(0, clips_Bubbles.Count);
-        float v = Random.Range(0.5f, 1f);
+        float v = Random.Range(0.5f, 1f) * sfxVolume;
     
         _audioSource.PlayOneShot(clips_Bubbles[i], v);
     }
