@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneList: 0
-  startingScene: 1
+  startingScene: 0
 --- !u!4 &109963628
 Transform:
   m_ObjectHideFlags: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   prop_Yaw: 2
   prop_Roll: 2
   prop_Scale: 0.3
-  sfxVolume: 0.8
+  sfxVolume: 1
   clips_Dashing:
   - {fileID: 8300000, guid: 31d3204ebfb2e034a981d2f42540edd2, type: 3}
   - {fileID: 8300000, guid: 671576fb60d4d2146b050ed70f5c7af7, type: 3}
@@ -407,6 +407,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e8898e875dae49447a7035ab810df3aa, type: 3}
   - {fileID: 8300000, guid: e1c2a3d1dcc4cc540bc3111f45df4025, type: 3}
   - {fileID: 8300000, guid: c8f298297636dcc4d888776ee435ff34, type: 3}
+  startingLocation: {x: -50, y: 28, z: 4}
 --- !u!54 &716087532
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -537,7 +538,7 @@ MonoBehaviour:
   heightAdjust: 3
   invertX: 0
   invertY: 0
-  mouseSensitivity: 8.6
+  mouseSensitivity: 3
   distance: 10
   fishScale: 0
   focusRadius: 5

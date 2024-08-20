@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using System.Data.SqlTypes;
 using UnityEngine;
-using UnityEngine.UIElements.Experimental;
+
 
 
 public class PlayerController : MonoBehaviour
@@ -10,6 +9,8 @@ public class PlayerController : MonoBehaviour
     // Outside Attributes
     Transform _cameraTransform;
     OrbitCamera _orbitCamera;
+    
+    bool enableControls = false;
     
     // Player Attributes and Movement
     [Header("Movement")]
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     float dashStrength = 0f;
     float dashTimer = 0f;
     private const float DASH_TIMER_SET = 2;
+    
     
     // Level and Stomach
     public int currentLevel { get; private set;}
@@ -76,7 +78,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] List<AudioClip> clips_Scream;
     [SerializeField] List<AudioClip> clips_Bubbles;
     
-    //enum SFX {}
+    
+    // Starting Location
+    [SerializeField] Vector3 startingLocation;
     
     
     private void CreateAudioSource()
@@ -121,6 +125,10 @@ public class PlayerController : MonoBehaviour
         props = new MaterialPropertyBlock();
         SendValuesToShader();
         
+        // Disable controls - enabled via start menu
+        enableControls = false;
+        
+        
         // Check that public values have been set
         //if (sfx_Jump == null) { print("PlayerController script missing: sfx_Jump"); }
         
@@ -130,17 +138,22 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    public void EnableControls()
+    {
+        enableControls = true;
+        _orbitCamera.SetDistanceToPlay();
+        transform.position = startingLocation;
+    }
+
     //-----------------------------------------//
     //               Update Cycles             //
     //-----------------------------------------//
 
     void Update()
     {       
-        
-       // if (Input.GetButtonDown("Fire1"))
-       // {
-       //     _audioSource.PlayOneShot(sfx_Splash);
-       // }
+        // controls enabled via start menu
+        if (enableControls == false)
+            return;
         
         
         // Rotate fish to face forward direction
@@ -163,7 +176,8 @@ public class PlayerController : MonoBehaviour
         // Keep track of PhsyX velocity
         velocity = _body.velocity;
         
-        AdjustVelocity();
+        if (enableControls)
+            AdjustVelocity();
         
         // Make any velocity changes here
         if (activateDash == true)

@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] SceneList startingScene;
     
     
+    public PlayerController playerController { get; private set;}
+    public FishPool fishPool { get; private set;}   
+    
     
     
     //-----------------------------------------//
@@ -45,6 +48,10 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }  
+        
+        // Player Link
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        fishPool = GetComponent<FishPool>();
                 
     }
      

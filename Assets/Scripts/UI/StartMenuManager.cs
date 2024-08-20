@@ -33,8 +33,10 @@ public class StartMenuManager : MonoBehaviour
     float creditsEaseTracker = 0f;
     bool showFade = false;
     bool showMenu = true;
-    bool showOptions = false;
+    //bool showOptions = false;
     bool showCredits = false;
+    bool startGame = false;
+    bool unload = false;
     EasingFunction.Function ease_Image = EasingFunction.GetEasingFunction(EasingFunction.Ease.EaseOutCubic);
     
     
@@ -46,6 +48,9 @@ public class StartMenuManager : MonoBehaviour
     
     // Options Panel
     
+    
+    // Starting Game
+    GameManager gameManager;
     
 
 
@@ -109,6 +114,12 @@ public class StartMenuManager : MonoBehaviour
 
  
     
+    private void Awake() 
+    {
+        gameManager = GameManager.Instance;    
+    }
+    
+    
     private void OnEnable() 
     {
         fadeEaseTracker = 1f;
@@ -127,7 +138,7 @@ public class StartMenuManager : MonoBehaviour
     {  
         showFade = false;
         showMenu = true;
-        showOptions = false;
+        //showOptions = false;
         showCredits = false;              
     }
     
@@ -135,7 +146,7 @@ public class StartMenuManager : MonoBehaviour
     {
         showFade = false;
         showMenu = false;
-        showOptions = true;
+        //showOptions = true;
         showCredits = false;
     }
     
@@ -143,7 +154,7 @@ public class StartMenuManager : MonoBehaviour
     {
         showFade = false;
         showMenu = false;
-        showOptions = false;
+        //showOptions = false;
         showCredits = true;
     }
     
@@ -151,8 +162,17 @@ public class StartMenuManager : MonoBehaviour
     {
         showFade = true;
         showMenu = false;
-        showOptions = false;
+        //showOptions = false;
         showCredits = false;
+    }
+    
+    public void StartGame()
+    {
+        showFade = true;
+        showMenu = false;
+        //showOptions = false;
+        showCredits = false;
+        startGame = true;
     }
 
      
@@ -202,6 +222,20 @@ public class StartMenuManager : MonoBehaviour
             fadeOutColor[3] = ease_Fade(0f, 1f, fadeEaseTracker);
             fullscreenFade.color = fadeOutColor;
         }
+        if (fadeEaseTracker >= 1 && startGame && showFade)
+        {
+            gameManager.BeginLoadingScene(GameManager.SceneList.TestAssets);
+            gameManager.playerController.EnableControls();
+            gameManager.fishPool.StartSpawn();
+            showFade = false;
+            unload = true;
+        }
+        
+        if (fadeEaseTracker <= 0 && unload == true)
+        {
+            gameManager.BeginUnloadingScene(GameManager.SceneList.StartMenu);
+        }
+        
         
     }
     

@@ -152,7 +152,7 @@ RectTransform:
   m_GameObject: {fileID: 321280213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1963100610}
@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160, y: -175}
-  m_SizeDelta: {x: 445, y: 136}
+  m_AnchoredPosition: {x: 618, y: -275}
+  m_SizeDelta: {x: 435, y: 245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321280215
 MonoBehaviour:
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca44a4a2898a7344ba5553c368f13b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageScale: 0.5
+  imageScale: 0.6
 --- !u!114 &321280216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,8 +196,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1798764551, guid: b7e48606e9c80e544a9099eb3b27e0e1, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -2043230173, guid: 530c9faa40c790d478b257f8d68d2e4b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0, b: 0.27058825, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.6117647, g: 0, b: 0.16470589, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -298,7 +298,7 @@ RectTransform:
   m_GameObject: {fileID: 455159133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1963100610}
@@ -306,8 +306,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -438}
-  m_SizeDelta: {x: 1462, y: 540}
+  m_AnchoredPosition: {x: -6, y: -533}
+  m_SizeDelta: {x: 539, y: 376}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455159135
 MonoBehaviour:
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca44a4a2898a7344ba5553c368f13b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageScale: 0.65
+  imageScale: 1
 --- !u!114 &455159136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 652515912, guid: b7e48606e9c80e544a9099eb3b27e0e1, type: 3}
+  m_Sprite: {fileID: 810580920, guid: 1c4f031f362921349ba698c619cb1529, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -389,7 +389,7 @@ RectTransform:
   m_GameObject: {fileID: 553527889}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1963100610}
@@ -397,8 +397,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 293, y: -16}
-  m_SizeDelta: {x: 417, y: 163}
+  m_AnchoredPosition: {x: 636, y: -0}
+  m_SizeDelta: {x: 385, y: 189}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &553527891
 MonoBehaviour:
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0, b: 0.27058825, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.6132076, g: 0, b: 0.16592686, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -446,7 +446,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1591997475}
         m_TargetAssemblyTypeName: StartMenuManager, Assembly-CSharp
-        m_MethodName: FadeOut
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -476,8 +476,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 11529528, guid: b7e48606e9c80e544a9099eb3b27e0e1, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 1412050504, guid: e86ef10ea8dc0384d871eca4395582b2, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca44a4a2898a7344ba5553c368f13b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageScale: 0.5
+  imageScale: 0.7
 --- !u!1 &557759321
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,16 +535,16 @@ RectTransform:
   m_GameObject: {fileID: 557759321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1963100610}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -130, y: 70}
-  m_SizeDelta: {x: 1017, y: 659}
+  m_AnchoredPosition: {x: -756, y: 306}
+  m_SizeDelta: {x: 300, y: 294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &557759323
 MonoBehaviour:
@@ -566,8 +566,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -552064854, guid: b7e48606e9c80e544a9099eb3b27e0e1, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -1656853224, guid: ee4f1316c55f44a44ae5fc66c5f22dd4, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca44a4a2898a7344ba5553c368f13b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageScale: 0.5
+  imageScale: 1.3
 --- !u!1 &569028118
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,8 +634,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 630, y: -427}
-  m_SizeDelta: {x: 472, y: 157}
+  m_AnchoredPosition: {x: 468, y: -552}
+  m_SizeDelta: {x: 312, y: 174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &569028120
 MonoBehaviour:
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0, b: 0.27058825, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.6117647, g: 0, b: 0.16470589, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -726,7 +726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1814784746, guid: b7e48606e9c80e544a9099eb3b27e0e1, type: 3}
+  m_Sprite: {fileID: 1843533832, guid: e5f29a93dbadd644da281db596b8eacc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -845,17 +845,17 @@ MonoBehaviour:
   - name: TitleArt
     hideImage: 0
     image: {fileID: 557759323}
-    showPos: {x: -120, y: 61}
+    showPos: {x: -347, y: 66}
     updateShowPos: 0
-    hidePos: {x: -768, y: 292}
+    hidePos: {x: -756, y: 306}
     updateHidePos: 0
     menuType: 0
   - name: StartButton
     hideImage: 0
     image: {fileID: 553527892}
-    showPos: {x: 336, y: -51}
+    showPos: {x: 316, y: -36}
     updateShowPos: 0
-    hidePos: {x: 658, y: -2}
+    hidePos: {x: 636, y: -0}
     updateHidePos: 0
     menuType: 0
   - name: CreditsButton
@@ -863,23 +863,23 @@ MonoBehaviour:
     image: {fileID: 321280216}
     showPos: {x: 160, y: -175}
     updateShowPos: 0
-    hidePos: {x: 626, y: -295}
+    hidePos: {x: 618, y: -275}
     updateHidePos: 0
     menuType: 0
   - name: Credits
     hideImage: 0
     image: {fileID: 455159136}
-    showPos: {x: 0, y: -26}
+    showPos: {x: 0, y: 0}
     updateShowPos: 0
-    hidePos: {x: 0, y: -438}
+    hidePos: {x: 0, y: -533}
     updateHidePos: 0
     menuType: 2
   - name: BackButton
     hideImage: 0
     image: {fileID: 569028122}
-    showPos: {x: 326, y: -204}
+    showPos: {x: 346, y: -173}
     updateShowPos: 0
-    hidePos: {x: 630, y: -427}
+    hidePos: {x: 468, y: -552}
     updateHidePos: 0
     menuType: 2
   imageEaseSpeed: 0.25

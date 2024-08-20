@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements.Experimental;
+
 
 [RequireComponent(typeof(Camera))]
 public class OrbitCamera : MonoBehaviour {
@@ -11,9 +11,15 @@ public class OrbitCamera : MonoBehaviour {
     [SerializeField] bool invertX = false;
     [SerializeField] bool invertY = false;
     [SerializeField, Range(0.1f, 20f)] float mouseSensitivity = 1f;
+    int enableCamera = 0;
 
     [SerializeField, Range(1f, 20f)]
     float distance = 5f;
+    
+    private const float START_DISTANCE = 3.5f;
+    private const float PLAY_DISTANCE = 10;
+    private const float START_HEIGHT = 0;
+    private const float PLAY_HEIGHT = 3;
     
     public float fishScale = 0f;
 
@@ -79,9 +85,14 @@ public class OrbitCamera : MonoBehaviour {
         regularCamera = GetComponent<Camera>();
         focusPoint = focus.position;
         transform.localRotation = Quaternion.Euler(orbitAngles);
+        
+        distance = START_DISTANCE;
+        heightAdjust = START_HEIGHT;
+        transform.rotation = Quaternion.Euler(8.236f, -28.867f, 0f);
     }
 
     void LateUpdate () {
+               
         UpdateFocusPoint();
         Quaternion lookRotation;
         if (ManualRotation() || AutomaticRotation()) {
@@ -137,12 +148,19 @@ public class OrbitCamera : MonoBehaviour {
     {
         mouseSensitivity = value;
     }
+    
+    public void SetDistanceToPlay()
+    {
+        distance = PLAY_DISTANCE;
+        enableCamera = 1;
+        heightAdjust = PLAY_HEIGHT;
+    }
 
 
     bool ManualRotation () {
         Vector2 input = new Vector2(
-            Input.GetAxis("Mouse Y") * mouseSensitivity,
-            Input.GetAxis("Mouse X") * mouseSensitivity
+            Input.GetAxis("Mouse Y") * mouseSensitivity * enableCamera,
+            Input.GetAxis("Mouse X") * mouseSensitivity * enableCamera
         );
         
         // Inverts camera controls based on option selected - Y axis is on input.x - X axis is on input.y

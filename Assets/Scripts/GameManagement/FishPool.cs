@@ -97,8 +97,7 @@ public class FishPool : MonoBehaviour
     }
 
 
-    // Just for debuggin mass fish
-    private void Start() 
+    public void StartSpawn() 
     {
         FishType newType;
         float x, y, z;
@@ -255,16 +254,16 @@ public class FishPool : MonoBehaviour
     
     MaterialPropertyBlock SetMaterialPropertyBlock(int type, int index)
     {
-        MaterialPropertyBlock mpb = new MaterialPropertyBlock();
+        //MaterialPropertyBlock mpb = new MaterialPropertyBlock();
         
-        mpb.SetFloat("_ZOffset", prop_ZOffset[type]);
-        mpb.SetFloat("_Yaw", prop_Yaw[type]);
-        mpb.SetFloat("_Roll", prop_Roll[type]);
-        mpb.SetFloat("_Scale", prop_Scale[type]);    
+        propertyBlock.SetFloat("_ZOffset", prop_ZOffset[type]);
+        propertyBlock.SetFloat("_Yaw", prop_Yaw[type]);
+        propertyBlock.SetFloat("_Roll", prop_Roll[type]);
+        propertyBlock.SetFloat("_Scale", prop_Scale[type]);    
         
-        mpb.SetFloat("_Instance_Time", animSpeed[index]);
+        propertyBlock.SetFloat("_Instance_Time", animSpeed[index]);
         
-        return mpb;
+        return propertyBlock;
     }
     
 }
