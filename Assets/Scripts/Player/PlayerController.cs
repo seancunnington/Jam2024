@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Data.SqlTypes;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0.1f, 1.0f)] float drag = 1f;
     [SerializeField, Range(1f, 30f)] float maxDashSpeed = 5f;
     float dashStrength = 0f;
+    float dashTimer = 0f;
+    private const float DASH_TIMER_SET = 2;
     
     // Level and Stomach
     public int currentLevel { get; private set;}
@@ -67,7 +70,12 @@ public class PlayerController : MonoBehaviour
     // SFX
     private AudioSource _audioSource;
     [Header("SFX")]
-    public AudioClip sfx_Splash = null;
+    [SerializeField] List<AudioClip> clips_Dashing;
+    [SerializeField] List<AudioClip> clips_Chomp;
+    [SerializeField] List<AudioClip> clips_Scream;
+    [SerializeField] List<AudioClip> clips_Bubbles;
+    
+    //enum SFX {}
     
     
     private void CreateAudioSource()
@@ -76,8 +84,6 @@ public class PlayerController : MonoBehaviour
         
         _audioSource.playOnAwake = false;
         _audioSource.loop = false;
-        
-        //_audioSource.clip = sfx_Jump;
     }
     
     
@@ -184,7 +190,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            desiredVelocity = _cameraTransform.forward * maxSpeed;
+            desiredVelocity = _cameraTransform.forward * maxSpeed * transform.localScale.x;
         }
         
         float maxSpeedChange = acceleration * Time.deltaTime;
@@ -196,12 +202,20 @@ public class PlayerController : MonoBehaviour
     
     
     void DriftAndDash()
-    {
+    {       
+        if (dashTimer > Time.time)
+            return;
+        
+        if (Input.GetButtonDown("Space"))
+        {
+            PlaySFX_Bubbles();
+        }
+        
         // Holding 'Space' down to drift
         if (Input.GetButton("Space"))
         {
             drifting = true;
-            
+                  
             // save the direction to drift in
             if (driftingDirection == Vector3.zero)              
                 driftingDirection = _cameraTransform.forward;
@@ -214,8 +228,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonUp("Space"))
         {
             drifting = false;
+            dashTimer = Time.time + DASH_TIMER_SET;
             driftingDirection = Vector3.zero;   // reset the drifting direction to zero, preparing for next drift
             activateDash = true;                // activate the dash
+            PlaySFX_SwimDash();
         }
     }
     
@@ -304,6 +320,43 @@ public class PlayerController : MonoBehaviour
         
         _transform.localScale = Vector3.one * currentScale;
         _orbitCamera.fishScale = currentScale; // also need to increase distance of camera to fish, as fish grows
+    }
+    
+    
+    //-----------------------------------------//
+    //                    SFX                  //
+    //-----------------------------------------//
+    
+    public void PlaySFX_SwimDash()
+    {
+        int i = Random.Range(0, clips_Dashing.Count);
+        float v = Random.Range(0.5f, 1f);
+    
+        _audioSource.PlayOneShot(clips_Dashing[i], v);
+    }
+    
+    public void PlaySFX_Chomp()
+    {
+        int i = Random.Range(0, clips_Chomp.Count);
+        float v = Random.Range(0.6f, 1f);
+    
+        _audioSource.PlayOneShot(clips_Chomp[i], v);
+    }
+    
+    public void PlaySFX_Scream()
+    {
+        int i = Random.Range(0, clips_Scream.Count);
+        float v = Random.Range(0.4f, 8f);
+    
+        _audioSource.PlayOneShot(clips_Scream[i], v);
+    }
+    
+    public void PlaySFX_Bubbles()
+    {
+        int i = Random.Range(0, clips_Bubbles.Count);
+        float v = Random.Range(0.5f, 1f);
+    
+        _audioSource.PlayOneShot(clips_Bubbles[i], v);
     }
     
     

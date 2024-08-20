@@ -177,15 +177,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109963626}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06e6ea134cbfaf6498cc6ff100108f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fishMesh:
   - {fileID: 3421827254228863905, guid: 20c22cda5fdfb2545afe637c3bd995fb, type: 3}
+  - {fileID: -7352674559388527765, guid: 695f3c97e45ae2740b086a1433285231, type: 3}
+  - {fileID: 1580730117048871943, guid: ae48d0b2fb90ce34c8ec487b62ea19d0, type: 3}
+  - {fileID: 7029180113243469505, guid: 03c10044b9a784e45a0042072ac99606, type: 3}
+  - {fileID: -166918792386502842, guid: cb5723bf6fc2d974693b31a6a678e6fe, type: 3}
   fishMaterials:
   - {fileID: 2100000, guid: 3b31523c3834b1c4eb944675e23d2de4, type: 2}
+  - {fileID: 2100000, guid: f85e25a285b3caa49b1c3018dd344cf9, type: 2}
+  - {fileID: 2100000, guid: c3d6cd57a77bd1a4d863b16e5b27d16d, type: 2}
+  - {fileID: 2100000, guid: ae172c64161fa824abf8d0888cdb4dba, type: 2}
+  - {fileID: 2100000, guid: ea973fe6432ff28469a7c8a689734209, type: 2}
 --- !u!1 &586574940
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +386,26 @@ MonoBehaviour:
   prop_Yaw: 2
   prop_Roll: 2
   prop_Scale: 0.3
-  sfx_Splash: {fileID: 8300000, guid: f253e6ffc7926ba488377a526b3b06cf, type: 3}
+  clips_Dashing:
+  - {fileID: 8300000, guid: 31d3204ebfb2e034a981d2f42540edd2, type: 3}
+  - {fileID: 8300000, guid: 671576fb60d4d2146b050ed70f5c7af7, type: 3}
+  - {fileID: 8300000, guid: 303446f41106d194fa23346194429f25, type: 3}
+  clips_Chomp:
+  - {fileID: 8300000, guid: ef7ee9c0e2329d44c8783bb4c0850401, type: 3}
+  - {fileID: 8300000, guid: 4a1ebd485f26b944195bfc5b62fdea9d, type: 3}
+  - {fileID: 8300000, guid: 8aa339251fcd12e4fa5cf037004fac37, type: 3}
+  clips_Scream:
+  - {fileID: 8300000, guid: d09970b31120c0c499b081b5d960de45, type: 3}
+  - {fileID: 8300000, guid: 6971c035bb9050a46ba3bca4c977b91d, type: 3}
+  - {fileID: 8300000, guid: fac31d70b20bb9b499b216ca3b3fa507, type: 3}
+  - {fileID: 8300000, guid: 78aac8f71350f324b9cd10071915957c, type: 3}
+  - {fileID: 8300000, guid: b81df7763240e06418ae0e83cd1c8c44, type: 3}
+  - {fileID: 8300000, guid: 54d3d17e4e8820a48be8693755818bc2, type: 3}
+  clips_Bubbles:
+  - {fileID: 8300000, guid: 31da56683c5fad549be4f2f6cef6dc85, type: 3}
+  - {fileID: 8300000, guid: e8898e875dae49447a7035ab810df3aa, type: 3}
+  - {fileID: 8300000, guid: e1c2a3d1dcc4cc540bc3111f45df4025, type: 3}
+  - {fileID: 8300000, guid: c8f298297636dcc4d888776ee435ff34, type: 3}
 --- !u!54 &716087532
 Rigidbody:
   m_ObjectHideFlags: 0
