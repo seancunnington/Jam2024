@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/scene_StartMenu.unity
     guid: e9ee47946710abb488f39f37d51a5472
   - enabled: 1
-    path: Assets/Scenes/scene_TestEnviro_JustBlocks.unity
+    path: Assets/Scenes/scene_TestAssets.unity
     guid: b38eaa140fe07be438f40b6286b3ca54
   - enabled: 1
     path: Assets/Scenes/scene_FRAN.unity
