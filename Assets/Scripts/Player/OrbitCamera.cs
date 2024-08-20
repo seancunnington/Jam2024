@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 [RequireComponent(typeof(Camera))]
 public class OrbitCamera : MonoBehaviour {
@@ -9,6 +10,7 @@ public class OrbitCamera : MonoBehaviour {
     float heightAdjust = 0f;
     [SerializeField] bool invertX = false;
     [SerializeField] bool invertY = false;
+    [SerializeField, Range(0.1f, 20f)] float mouseSensitivity = 1f;
 
     [SerializeField, Range(1f, 20f)]
     float distance = 5f;
@@ -130,10 +132,17 @@ public class OrbitCamera : MonoBehaviour {
         }
     }
 
+
+    public void SetMouseSensitivity(float value)
+    {
+        mouseSensitivity = value;
+    }
+
+
     bool ManualRotation () {
         Vector2 input = new Vector2(
-            Input.GetAxis("Mouse Y"),
-            Input.GetAxis("Mouse X")
+            Input.GetAxis("Mouse Y") * mouseSensitivity,
+            Input.GetAxis("Mouse X") * mouseSensitivity
         );
         
         // Inverts camera controls based on option selected - Y axis is on input.x - X axis is on input.y

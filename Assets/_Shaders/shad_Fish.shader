@@ -27,6 +27,7 @@ Shader "FishGame/shad_Fish"
 
         #pragma surface surf ToonRamp vertex:vert fullforwardshadows addshadow
         #pragma shader_feature TEST_SWIM_VALUES
+        //#pragma multi_compile_instancing
       
 
         #define RAMP_SMOOTHNESS     0.02
@@ -63,12 +64,12 @@ Shader "FishGame/shad_Fish"
         float4 _Color;
         
         float _TestSwaySpeed;   // 2 - 50
-        float _TestZOffset;     // 0.05
-        float _TestYaw;         // 40
-        float _TestRoll;        // 40 
-        float _TestScale;       // 0.02
+        float _TestZOffset;     // 1.5
+        float _TestYaw;         // 2
+        float _TestRoll;        // 2 
+        float _TestScale;       // 0.3
 
-        #define MASK_FEATHER    10
+        #define MASK_FEATHER    0.5
 
         struct Input
         {

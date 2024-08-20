@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 109963628}
   - component: {fileID: 109963627}
+  - component: {fileID: 109963629}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -153,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneList: 0
-  startingScene: 2
+  startingScene: 1
 --- !u!4 &109963628
 Transform:
   m_ObjectHideFlags: 0
@@ -169,6 +170,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &109963629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109963626}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e6ea134cbfaf6498cc6ff100108f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishMesh:
+  - {fileID: 3421827254228863905, guid: 20c22cda5fdfb2545afe637c3bd995fb, type: 3}
+  fishMaterials:
+  - {fileID: 2100000, guid: 3b31523c3834b1c4eb944675e23d2de4, type: 2}
 --- !u!1 &586574940
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 586574940}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 716087529}
@@ -251,7 +268,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586574940}
-  m_Mesh: {fileID: 3421827254228863905, guid: e0102ccfe0019964a8bc60bd62920888, type: 3}
+  m_Mesh: {fileID: 3421827254228863905, guid: 20c22cda5fdfb2545afe637c3bd995fb, type: 3}
 --- !u!1 &716087526
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,10 +374,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   scaleUpSpeed: 2
-  prop_ZOffset: 0.05
-  prop_Yaw: 40
-  prop_Roll: 40
-  prop_Scale: 0.02
+  prop_ZOffset: 1.5
+  prop_Yaw: 2
+  prop_Roll: 2
+  prop_Scale: 0.3
   sfx_Splash: {fileID: 8300000, guid: f253e6ffc7926ba488377a526b3b06cf, type: 3}
 --- !u!54 &716087532
 Rigidbody:
@@ -492,6 +509,7 @@ MonoBehaviour:
   heightAdjust: 3
   invertX: 0
   invertY: 0
+  mouseSensitivity: 2
   distance: 10
   fishScale: 0
   focusRadius: 5

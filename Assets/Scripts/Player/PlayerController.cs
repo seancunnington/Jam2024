@@ -58,10 +58,10 @@ public class PlayerController : MonoBehaviour
     MaterialPropertyBlock props;
     float animSpeed = 0f;
     [Header("Shader Values")]
-    [SerializeField] float prop_ZOffset = 0.05f;
-    [SerializeField] float prop_Yaw = 40.0f;
-    [SerializeField] float prop_Roll = 40.0f;
-    [SerializeField] float prop_Scale = 0.02f;
+    [SerializeField] float prop_ZOffset = 1.5f;
+    [SerializeField] float prop_Yaw = 2f;
+    [SerializeField] float prop_Roll = 2f;
+    [SerializeField] float prop_Scale = 0.3f;
     
     
     // SFX
@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
     //-----------------------------------------//
     //                  Setup                  //
     //-----------------------------------------//
+
 
     void Awake()
     {
@@ -136,7 +137,8 @@ public class PlayerController : MonoBehaviour
         
         
         // Rotate fish to face forward direction
-        _modelTransform.rotation = Quaternion.LookRotation(velocity);
+        if (velocity != Vector3.zero)
+            _modelTransform.rotation = Quaternion.LookRotation(velocity);
         
         // Dashing Mechanics
         DriftAndDash();

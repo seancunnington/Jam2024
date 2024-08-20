@@ -7,10 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_TestFish
+  m_Name: mat_ClownFish
   m_Shader: {fileID: 4800000, guid: b2ae3d2d5596efd4ea8d4f233f94d899, type: 3}
-  m_ValidKeywords:
-  - TEST_SWIM_VALUES
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -76,17 +75,17 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TEST_SWIM: 1
+    - _TEST_SWIM: 0
     - _TestMaskFeather: 1.2
     - _TestRigidness: 50
-    - _TestRoll: 2
-    - _TestScale: 0.3
+    - _TestRoll: 40
+    - _TestScale: 0.02
     - _TestSwayMask: 0
     - _TestSwayMax: 0.015
-    - _TestSwaySpeed: 5
+    - _TestSwaySpeed: 4.5
     - _TestXOffset: -0.49
-    - _TestYaw: 2
-    - _TestZOffset: 1.5
+    - _TestYaw: 40
+    - _TestZOffset: 0.05
     - _UVSec: 0
     - _Yaw: 1.5
     - _ZWrite: 1
