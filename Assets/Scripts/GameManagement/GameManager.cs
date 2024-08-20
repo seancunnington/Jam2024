@@ -14,11 +14,9 @@ public class GameManager : MonoBehaviour
     // Scene Management Data
         public enum SceneList { 
         StartMenu,
-        //PauseMenu,
-        //GameOverScreen,
-        TestAssets,
+        TestAssets_1,
         TestAssetsLvl2,
-        FRAN
+        TestAsssets
     }
     [HideInInspector]
     public SceneList sceneList;
@@ -28,7 +26,9 @@ public class GameManager : MonoBehaviour
     
     
     public PlayerController playerController { get; private set;}
-    public FishPool fishPool { get; private set;}   
+    public FishPool fishPool { get; private set;}  
+    public Camera mainCamera {get; private set;}    
+    public MusicManager musicManager {get; private set;}
     
     
     
@@ -52,7 +52,9 @@ public class GameManager : MonoBehaviour
         // Player Link
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         fishPool = GetComponent<FishPool>();
-                
+        musicManager = GetComponent<MusicManager>();
+        mainCamera = Camera.main;
+        mainCamera.enabled = false;
     }
      
     private void OnEnable() 

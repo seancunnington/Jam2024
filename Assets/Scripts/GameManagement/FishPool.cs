@@ -14,8 +14,8 @@ public class FishPool : MonoBehaviour
     // Data per fish type
     [SerializeField] List<Mesh> fishMesh;           // list of all meshes needed for each fish - must be same as enum list
     [SerializeField] List<Material> fishMaterials;  // list of all materials needed for each fish - must be same as enum list
-    float[] fishMaxSpeed = { 30, 15, 40, 40, 70 };      // list of scales to adjust each mesh
-    int[] fishEatAmount = { 5, 15, 2, 10, 20 };
+    float[] fishMaxSpeed = { 20, 15, 25, 15, 30 };      // list of scales to adjust each mesh
+    int[] fishEatAmount = { 1, 3, 1, 2, 5 };
     float[] prop_ZOffset = { 1.5f, 1.8f, 1.6f, 1.4f, 17f };
     float[] prop_Yaw = { 2, 3, 4, 2, 3 };
     float[] prop_Roll = { 2, 3, 3, 2, 3 };
@@ -52,8 +52,8 @@ public class FishPool : MonoBehaviour
     private const float DRAG = 0.96f;
     private const float MOVE_TIMER_SET = 0.2f;
     private const int IMPULSE_TIMER_SET = 10;
-    private const float RUN_DISTANCE = 10f;
-    private const float EAT_DISTANCE = 2f;
+    private const float RUN_DISTANCE = 12f;
+    private const float EAT_DISTANCE = 3f;
     
 
     
@@ -64,7 +64,7 @@ public class FishPool : MonoBehaviour
         propertyBlock = new MaterialPropertyBlock();
         
         // Get camera
-        _camera = Camera.main;
+        _camera = GameManager.Instance.mainCamera;
         _cameraTransform = _camera.transform;
         
         // Get Player
@@ -104,10 +104,10 @@ public class FishPool : MonoBehaviour
         for (int i = 0; i < 50; i++)
         {
             newType = fishTypeList[ Random.Range(0, fishTypeList.Length) ];
-            x = Random.Range(-1, 1);
-            y = Random.Range(-1, 1);
-            z = Random.Range(-1, 1);
-            Vector3 dir = (new Vector3(x, y, z).normalized * 20) + playerFishPosition;
+            x = Random.Range(-1f, 1f);
+            y = Random.Range(0f, 1f);
+            z = Random.Range(-1f, 1f);
+            Vector3 dir = (new Vector3(x, y, z).normalized * 100) + playerFishPosition;
             AddFish(newType, dir, Vector3.forward);
         }
     }
@@ -129,13 +129,13 @@ public class FishPool : MonoBehaviour
             //{
                 
                 Graphics.DrawMesh(  fishMesh[type],                             // Mesh
-                                    fishPosition[i],                       // Position
+                                    fishPosition[i],                            // Position
                                     Quaternion.LookRotation(prevFishVelocity[i]),   // Rotation
                                     fishMaterials[type],                        // Material
                                     0,                                          // Layer
                                     _camera,                                    // Camera
                                     0,                                          // Submesh Index
-                                    SetMaterialPropertyBlock(type, i),                                   // Material Property Block
+                                    SetMaterialPropertyBlock(type, i),          // Material Property Block
                                     true,                                       // Casts Shadows
                                     true,                                       // Receives Shadows
                                     false                                       // Use Light Probes
@@ -231,15 +231,17 @@ public class FishPool : MonoBehaviour
             // Create some fish
             int num = Random.Range(0, 4);
             FishType newType;
-            int x, y, z;            
+            float x, y, z;            
             for (int i = 0; i < num; i++)
             {
                 newType = fishTypeList[ Random.Range(0, fishTypeList.Length) ];
-                x = Random.Range(-30, 30);
-                y = Random.Range(-30, 30);
-                z = Random.Range(-30, 30);
-                AddFish(newType, new Vector3(x, y, z), Vector3.forward);
+                x = Random.Range(-1f, 1f);
+                y = Random.Range(0.1f, 1f);
+                z = Random.Range(-1f, 1f);
+                Vector3 dir = (new Vector3(x, y, z).normalized * 200) + playerFishPosition;
+                AddFish(newType, dir, Vector3.forward);
             }
+            
         }
 
         

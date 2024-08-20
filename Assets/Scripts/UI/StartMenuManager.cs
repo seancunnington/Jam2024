@@ -46,7 +46,8 @@ public class StartMenuManager : MonoBehaviour
     EasingFunction.Function ease_Fade = EasingFunction.GetEasingFunction(EasingFunction.Ease.EaseInOutCubic);
     
     
-    // Options Panel
+    // Env Art
+    [SerializeField] GameObject EnvArt;
     
     
     // Starting Game
@@ -116,7 +117,9 @@ public class StartMenuManager : MonoBehaviour
     
     private void Awake() 
     {
-        gameManager = GameManager.Instance;    
+        gameManager = GameManager.Instance;  
+        EnvArt.SetActive(true);
+        gameManager.mainCamera.enabled = true;
     }
     
     
@@ -224,9 +227,10 @@ public class StartMenuManager : MonoBehaviour
         }
         if (fadeEaseTracker >= 1 && startGame && showFade)
         {
-            gameManager.BeginLoadingScene(GameManager.SceneList.TestAssets);
+            gameManager.BeginLoadingScene(GameManager.SceneList.TestAssets_1);
             gameManager.playerController.EnableControls();
             gameManager.fishPool.StartSpawn();
+            EnvArt.SetActive(false);
             showFade = false;
             unload = true;
         }

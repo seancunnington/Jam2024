@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     // Outside Attributes
     Transform _cameraTransform;
     OrbitCamera _orbitCamera;
+    MusicManager _musicManager;
     
     bool enableControls = false;
     
@@ -100,8 +101,9 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         // Get components
-        _cameraTransform = Camera.main.transform;
-        _orbitCamera = Camera.main.transform.GetComponent<OrbitCamera>();
+        _cameraTransform = GameManager.Instance.mainCamera.transform;
+        _orbitCamera = _cameraTransform.GetComponent<OrbitCamera>();
+        _musicManager = GameManager.Instance.musicManager;
         _transform = this.transform;
         _body = GetComponent<Rigidbody>();
         _body.useGravity = false;
@@ -294,6 +296,12 @@ public class PlayerController : MonoBehaviour
             currentLevel += 1;                  // level up
             SetNextStomachLevelUpAmount();     // get stomach amount for next level up
             SetNextScaleAmount();
+            
+            if (currentLevel % 5 == 0)
+            {
+                _musicManager.IncreaseNextSource();
+                print("level: " + currentLevel + " - next music");
+            }
         }
         
         // Update scale

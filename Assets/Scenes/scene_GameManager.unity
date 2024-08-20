@@ -14,19 +14,19 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_Fog: 1
+  m_FogColor: {r: 0.16237983, g: 0.8396226, b: 0.7172293, a: 1}
+  m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_LinearFogStart: 50
+  m_LinearFogEnd: 500
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 265e5809f913db64b917df41daca1c4c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1754898, g: 0.21957858, b: 0.30189964, a: 1}
+  m_IndirectSpecularColor: {r: 0.23704049, g: 1.0094349, b: 1.2112415, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 109963628}
   - component: {fileID: 109963627}
   - component: {fileID: 109963629}
+  - component: {fileID: 109963630}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -163,7 +164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109963626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.407882, y: -5.0771995, z: 10.302717}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -194,6 +195,35 @@ MonoBehaviour:
   - {fileID: 2100000, guid: c3d6cd57a77bd1a4d863b16e5b27d16d, type: 2}
   - {fileID: 2100000, guid: ae172c64161fa824abf8d0888cdb4dba, type: 2}
   - {fileID: 2100000, guid: ea973fe6432ff28469a7c8a689734209, type: 2}
+--- !u!114 &109963630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109963626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662530c6417ae8745aea73822e1cef36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  targetClip: 0
+  increasingSource: 0
+  swapStyles: 0
+  progressTracker: 0
+  progressSpeed: 0.4
+  list_KyleSongs:
+  - {fileID: 8300000, guid: 63f3c639bc096de4e8be3a3741119326, type: 3}
+  - {fileID: 8300000, guid: 28cccdf2c79bb264eb0927f06e65681e, type: 3}
+  - {fileID: 8300000, guid: e021728e8d7c37644b29b45cec6687a5, type: 3}
+  - {fileID: 8300000, guid: b5756d6932a8ed849a8098e26717d68e, type: 3}
+  - {fileID: 8300000, guid: 369b9b9acd9bdda49840f3c9717f3aa1, type: 3}
+  list_MaggieSongs:
+  - {fileID: 8300000, guid: 8d43686e9ff222348be306a3858a8085, type: 3}
+  - {fileID: 8300000, guid: b1a25c2be49f39b468640599398ad734, type: 3}
+  - {fileID: 8300000, guid: afbd2a0ccc506b54ea5bfb319578df01, type: 3}
+  - {fileID: 8300000, guid: b0d78646fc23bc446a4de2fcfd5abff2, type: 3}
 --- !u!1 &586574940
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +360,7 @@ MonoBehaviour:
   drag: 1
   maxDashSpeed: 30
   maxLevel: 100
-  expCap: 1000
+  expCap: 5000
   curve_levelUp:
     serializedVersion: 2
     m_Curve:
@@ -407,7 +437,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e8898e875dae49447a7035ab810df3aa, type: 3}
   - {fileID: 8300000, guid: e1c2a3d1dcc4cc540bc3111f45df4025, type: 3}
   - {fileID: 8300000, guid: c8f298297636dcc4d888776ee435ff34, type: 3}
-  startingLocation: {x: -50, y: 28, z: 4}
+  startingLocation: {x: 0, y: 20, z: 0}
 --- !u!54 &716087532
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -538,7 +568,7 @@ MonoBehaviour:
   heightAdjust: 3
   invertX: 0
   invertY: 0
-  mouseSensitivity: 3
+  mouseSensitivity: 7
   distance: 10
   fishScale: 0
   focusRadius: 5
